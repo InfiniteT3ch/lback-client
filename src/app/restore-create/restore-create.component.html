@@ -1,0 +1,16 @@
+<div class="img-heading">
+  <img [ngSrc]="lib.getImage('restore')"></img>
+  <h2 [innerHTML]="title"></h2>
+</div>
+<div class="pure-g pure-form">
+   <label class="pure-u-1-3">Restore Name</label>
+   <input class="pure-u-2-3" type="text" [ngModel]="values.name"/>
+   <label class="pure-u-1-3">Restore Backup</label>
+   <select [(ngModel)]="selectedBackup">
+	 <option *ngFor="#option of backups" [value]="option.name" [innerHTML]="option.name"></option>
+   </select>
+   <hr/>
+   <button class="pure-button pure-button-primary pure-button-default" (click)="post()">
+	 Restore
+   </button>
+</div>

@@ -1,0 +1,117 @@
+<div class="img-heading">
+   <img ngSrc="images.home"/>
+   <h2 [innerHtml]="title"></h2>
+</div>
+<div class="pure-g">
+   <div class="pure-u-1-2">
+	 <h2>Backups</h2>
+	 <div [ngStyle]="data.backups.length===0?{'display':'block'}:{'display':'none'}" class="nomsg">
+		No backups listed..
+	 </div>
+	 <div [ngStyle]="data.backups.length>0?{'display':'block'}:{'display':'none'}">
+		<table class="pure-table">
+			<thead>
+				<th>Backup Name</th>
+				<th>Backup Folder</th>
+				<th>Backup Version</th>
+				<th>Backup Date</th>
+				<th>Backup Status</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="backup of data.backups">
+					<td [innerHTML]="backup.name">
+						<a [innerHTML]="backup.name" routerLink="['/backups/', backup.id]"></a>
+					</td>
+					<td [innerHTML]="backup.folder"></td>
+					<td [innerHTML]="backup.version"></td>
+					<td [innerHTML]="backup.status"></td>
+				</tr>
+			</tbody>
+		</table>
+		<ul class="pagination">
+			 <li *ngFor="page of lib.getPages(settings.backups.amount)">
+				<button class="pure-buttpn pure-button-primary" (click)="gotoPage(page, settings.backups)" [innerHTML]="page">
+				</button>
+			</li>
+		</ul>
+	 </div>
+   </div>
+   <div class="pure-u-1-2">
+	 <h2>Restores</h2>
+	 <div [ngStyle]="data.restores.length===0?{'display':'block'}:{'display':'none'}" class="nomsg">
+		No restores listed..
+	 </div>
+	 <div [ngStyle]="data.restores.length>0?{'display':'block'}:{'display':'none'}">
+		<table class="pure-table">
+			<thead>
+				<th>Backup Name</th>
+				<th>Backup Version</th>
+				<th>Backup Date</th>
+				<th>Backup Status</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="backup of data.restores">
+					<td [innerHTML]="backup.name">
+						<a [innerHTML]="backup.name" routerLink="['/restores/', backup.id]"></a>
+					</td>
+					<td [innerHTML]="backup.version"></td>
+					<td [innerHTML]="backup.status"></td>
+				</tr>
+			</tbody>
+		</table>
+		<ul class="pagination">
+			 <li *ngFor="page of lib.getPages(settings.restores.amount)">
+				<button class="pure-buttpn pure-button-primary" (click)="gotoPage(page, settings.restores)" [innerHTML]="page">
+				</button>
+			</li>
+		</ul>
+	 </div>
+   </div>
+   <div class="pure-u-1-2">
+	 <h2>Restores</h2>
+	 <div [ngStyle]="data.restores.length===0?{'display':'block'}:{'display':'none'}" class="nomsg">
+		No restores listed..
+	 </div>
+	 <div [ngStyle]="data.restores.length>0?{'display':'block'}:{'display':'none'}">
+		<table class="pure-table">
+			<thead>
+				<th>Restore Date</th>
+				<th>Restore Folder</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="restore of data.restores">
+					<td [innerHTML]="restore.name">
+						<a [innerHTML]="restore.name" routerLink="['/restores/', restore.id]"></a>
+					</td>
+					<td [innerHTML]="restore.version"></td>
+					<td [innerHTML]="restore.status"></td>
+				</tr>
+			</tbody>
+		</table>
+		<ul class="pagination">
+			 <li *ngFor="page of lib.getPages(settings.restores.amount)">
+				<button class="pure-buttpn pure-button-primary" (click)="gotoPage(page, settings.restores)" [innerHTML]="page">
+				</button>
+			</li>
+		</ul>
+	 </div>
+   </div>
+   <div class="pure-u-1">
+	 <h2>Users</h2>
+	 <div [ngStyle]="data.us
+   
+					
+				
+	
+
+  
+					
+				
+	
+
+
+					
+				
+	
+
+

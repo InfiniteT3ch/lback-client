@@ -1,0 +1,15 @@
+<h2 [innerHTML]="backup.name"></h2>
+<hr/>
+<span><b>Folder: </b> <span [innerHTML]="backup.folder"></span></span>
+<span><b>Version: </b> <span [innerHTML]="backup.version"></span></span>
+<div class="progress-bar">
+   <div class="progress-bar-amount" [ngStyle]="{'width': progress.progressPct+'%'}"></div> 
+   <div class="progress-bar-full" [ngStyle]="{'width': '100%'}"></div>
+</div>
+<div class="buttons">
+  <li>
+	 <button class="img-button pure-button pure-button-default pure-button-primary" routerLink="['/backups/', backup.id, 'delete']">
+		<img [ngSrc]="lib.getImage('delete')"></img>
+	 </button>
+  </li>
+</div>

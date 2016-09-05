@@ -1,0 +1,14 @@
+<div class="img-heading">
+   <img [ngSrc]="lib.getImage('user')"></img>
+   <h2 [innerHTML]="title"></h2>
+</div>
+<div class="pure-g pure-form">
+   <label class="pure-u-1-3">Username</label>
+   <input  class="pure-u-2-3" type="text" [(ngModel)]="values.username"/>
+   <label class="pure-u-1-3">Password</label>
+   <input class="pure-u-2-3" type="password" [(ngModel)]="values.password"/>
+   <hr/>
+   <button (click)="post()" class="pure-button pure-button-primary pure-button-default">
+   	Create User
+   </button>
+</div>

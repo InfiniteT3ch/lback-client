@@ -1,0 +1,15 @@
+<div class="img-heading">
+   <img [ngSrc]="lib.getImage('backups')"></img>
+   <h2 [innerHTML]="title"></h2>
+</div>
+<button class="pure-button pure-button-primary pure-button-default"
+	 routerLink="['/backups/backup']">New Backup [+]</button>
+<div class="pure-g">
+   <div class="pure-u-1-2" *ngFor="backup of models">
+	<app-backup-box [backup]="backup"></app-backup-box>
+   </div>
+   <div class="pure-u-1 pagination">
+	 <button class="pure-button pure-button-primary" *ngFor="page of lib.getPages(settings.count)" (click)="gotoPage(page)">
+	 </button>
+  </div>
+</div>

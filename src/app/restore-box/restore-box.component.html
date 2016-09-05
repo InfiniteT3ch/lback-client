@@ -1,0 +1,7 @@
+<h2 [innerHTML]="restore.name"></h2>
+<hr/>
+<span><b>Folder: </b> <span [innerHTML]="restore.folder"></span></span>
+<div class="progress-bar">
+   <div class="progress-bar-amount" [ngStyle]="{'width': progress.progressPct+'%'}"></div> 
+   <div class="progress-bar-full" [ngStyle]="{'width': '100%'}"></div>
+</div>
